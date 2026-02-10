@@ -1,9 +1,23 @@
+# Allow all search engines to crawl
 User-agent: *
 Allow: /
 
+# Sitemap location
 Sitemap: https://agentic-dev-rho.vercel.app/sitemap.xml
 
-# Block scrapers
+# Specific bot rules
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+# Disallow bad bots
+User-agent: MJ12bot
+Disallow: /
+
 User-agent: AhrefsBot
 Disallow: /
 
