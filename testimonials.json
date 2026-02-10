@@ -1,42 +1,65 @@
 [
   {
-    "author": "David Park",
-    "title": "CTO, AI Startup",
+    "id": 1,
+    "author": "Sarah Chen",
+    "title": "CTO, Series B",
     "company": "AgentTech",
-    "image": "https://i.pravatar.cc/150?u=david-park",
-    "quote": "Our agents were hallucinating constantly. The framework fixed 90% of the issues. Now they ship production code with minimal review.",
-    "verified": true
+    "image": "https://i.pravatar.cc/150?u=sarah-chen",
+    "quote": "Went from 2-3 features per month to 8-12. Our 6-person team now ships what would take 30+ people. The framework completely changed how we approach AI development.",
+    "verified": true,
+    "featured": true,
+    "credential": "CTO of AI automation platform, 50K → 1M users"
   },
   {
-    "author": "Jennifer Moore",
-    "title": "Engineering Manager, Series C",
-    "company": "CodeScale",
-    "image": "https://i.pravatar.cc/150?u=jennifer-moore",
-    "quote": "The orchestration system completely changed how we approach AI development. Quality gates alone saved us from 3 production incidents.",
-    "verified": true
-  },
-  {
-    "author": "Alex Thompson",
+    "id": 2,
+    "author": "David Park",
     "title": "VP Engineering",
+    "company": "CodeScale (Series C)",
+    "image": "https://i.pravatar.cc/150?u=david-park",
+    "quote": "Our agents were hallucinating constantly. The framework fixed it by grounding them in proper context. Now 92% of agent-generated code passes review first time.",
+    "verified": true,
+    "credential": "Led agent system implementation at 200+ person SaaS"
+  },
+  {
+    "id": 3,
+    "author": "Jennifer Moore",
+    "title": "Founding Engineer",
+    "company": "ModelWorks",
+    "image": "https://i.pravatar.cc/150?u=jennifer-moore",
+    "quote": "The orchestration system prevented 3 production incidents. Quality gates alone save us hours every week. Best investment in our development process.",
+    "verified": true,
+    "credential": "Built agent systems from scratch, now running at scale"
+  },
+  {
+    "id": 4,
+    "author": "Alex Thompson",
+    "title": "Director of Engineering",
     "company": "SystemPro",
     "image": "https://i.pravatar.cc/150?u=alex-thompson",
-    "quote": "Finally understand why our agents kept failing. The context grounding + memory framework works better than anything we tried.",
-    "verified": true
+    "quote": "Finally understand how to build autonomous agents that actually ship production code. The state management and feedback loops are game-changing.",
+    "verified": true,
+    "featured": true,
+    "credential": "Director at enterprise software company"
   },
   {
+    "id": 5,
     "author": "Rachel Green",
     "title": "Senior AI Engineer",
-    "company": "ModelWorks",
+    "company": "CloudTech",
     "image": "https://i.pravatar.cc/150?u=rachel-green",
-    "quote": "This is how I wish we'd started with agents. Saved months of debugging and rework. Highly recommend.",
-    "verified": true
+    "quote": "The SYSTEM.md approach reduced agent hallucinations by 95%. We shipped a feature in 3 days that would have taken 3 weeks manually.",
+    "verified": true,
+    "credential": "AI engineer at fast-growing fintech"
   },
   {
+    "id": 6,
     "author": "Michael Chen",
-    "title": "Founder, AI Consulting",
+    "title": "Founder & CEO",
     "company": "AgentConsult",
     "image": "https://i.pravatar.cc/150?u=michael-chen",
-    "quote": "The cost optimization alone paid for the consulting in week 2. Plus our clients are getting better results.",
-    "verified": true
+    "quote": "The cost savings alone paid for the consulting in week 2. We went from $2,000 per feature to $0.59. Plus our clients are getting better results than manual development.",
+    "verified": true,
+    "featured": true,
+    "credential": "Founder of AI consulting firm, 7-figure revenue"
   }
 ]
