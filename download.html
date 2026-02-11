@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Lead Magnet - N3wth Orchestrator</title>
+    <script>
+        // Parse slug from URL
+        const path = window.location.pathname;
+        const slug = path.split('/download/')[1];
+        
+        if (slug) {
+            // Trigger download
+            fetch(`/lead-magnets/${slug}.md`)
+                .then(response => response.text())
+                .then(content => {
+                    const blob = new Blob([content], { type: 'text/markdown' });
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `${slug}.md`;
+                    document.body.appendChild(a);
+                    a.click();
+                    window.URL.revokeObjectURL(url);
+                    document.body.removeChild(a);
+                    
+                    // Show success message
+                    document.getElementById('status').innerHTML = 
+                        '<h1>Download Started!</h1><p>Your file should download shortly.</p>';
+                })
+                .catch(error => {
+                    document.getElementById('status').innerHTML = 
+                        '<h1>Error</h1><p>File not found.</p>';
+                });
+        }
+    </script>
+</head>
+<body>
+    <div id="status">
+        <h1>Preparing download...</h1>
+    </div>
+</body>
+</html>
