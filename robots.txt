@@ -1,25 +1,55 @@
-# Allow all search engines to crawl
+# robots.txt for N3wth Orchestrator - AI Agent Development Consulting
+# https://agentic-dev-rho.vercel.app
+
 User-agent: *
 Allow: /
+Allow: /docs/
+Allow: /blog/
+Allow: /case-studies/
+Allow: /sitemap.xml
+Allow: /robots.txt
 
-# Sitemap location
-Sitemap: https://agentic-dev-rho.vercel.app/sitemap.xml
+# Disallow crawling of private/admin areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+Disallow: /_next/
+Disallow: /node_modules/
+Disallow: /internal/
+Disallow: /.git/
 
-# Specific bot rules
+# Disallow query parameters that create duplicate content
+Disallow: /*?utm_source=
+Disallow: /*?utm_medium=
+Disallow: /*?utm_campaign=
+Disallow: /*?utm_content=
+Disallow: /*?utm_term=
+Disallow: /*?redirect=
+
+# Allow important documentation and resources
+Allow: /docs/
+Allow: /blog/
+Allow: /case-studies/
+Allow: /orchestrator/
+
+# Googlebot specific rules (more aggressive crawling)
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 0
+
+# Bingbot
+User-agent: Bingbot
 Crawl-delay: 1
 
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 2
+# Default crawl delay
+Crawl-delay: 1
+Request-rate: 1/1s
 
-# Disallow bad bots
-User-agent: MJ12bot
-Disallow: /
+# Sitemap declaration
+Sitemap: https://agentic-dev-rho.vercel.app/sitemap.xml
 
-User-agent: AhrefsBot
-Disallow: /
+# Alternative sitemaps if needed
+Sitemap: https://agentic-dev-rho.vercel.app/sitemap-docs.xml
+Sitemap: https://agentic-dev-rho.vercel.app/sitemap-blog.xml
 
-User-agent: SemrushBot
-Disallow: /
+# Comment: Last updated: 2026-02-11
