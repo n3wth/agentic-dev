@@ -1,114 +1,110 @@
-import React, { useState, useEffect } from 'react';
+'use client'
 
-/**
- * ExitIntentPopup Component for Agentic Dev
- * Customized messaging for AI agent development services
- */
+import { useEffect, useState } from 'react'
+import { X } from 'lucide-react'
+
 interface ExitIntentPopupProps {
-  title?: string;
-  message?: string;
-  ctaText?: string;
-  ctaLink?: string;
-  onClose?: () => void;
+  title: string
+  message: string
+  cta: string
+  ctaHref: string
+  email?: boolean
 }
 
-export const ExitIntentPopup: React.FC<ExitIntentPopupProps> = ({
-  title = "Before you leave...",
-  message = "Get a free AI agent architecture review from our senior developers. See how much time you could save.",
-  ctaText = "Schedule Your Review",
-  ctaLink = "/start",
-  onClose
-}) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const [showOnce, setShowOnce] = useState(false);
+export default function ExitIntentPopup({
+  title,
+  message,
+  cta,
+  ctaHref,
+  email = true,
+}: ExitIntentPopupProps) {
+  const [isVisible, setIsVisible] = useState(false)
+  const [hasInteracted, setHasInteracted] = useState(false)
 
   useEffect(() => {
-    if (showOnce) return;
+    // Check if user has already interacted
+    const hasInteractedBefore = localStorage.getItem('exit-intent-popup-interacted')
+    if (hasInteractedBefore) {
+      return
+    }
 
     const handleMouseLeave = (e: MouseEvent) => {
-      if (e.clientY < 10) {
-        setIsVisible(true);
-        setShowOnce(true);
-        
-        if (typeof window !== 'undefined' && (window as any).gtag) {
-          (window as any).gtag('event', 'popup_shown', {
-            popup_type: 'exit_intent',
-            service: 'agentic_dev'
-          });
-        }
+      // Detect if mouse is leaving towards top (likely leaving the page)
+      if (e.clientY <= 0) {
+        setIsVisible(true)
+        setHasInteracted(true)
+        localStorage.setItem('exit-intent-popup-interacted', 'true')
       }
-    };
+    }
 
-    document.addEventListener('mouseleave', handleMouseLeave);
-    return () => document.removeEventListener('mouseleave', handleMouseLeave);
-  }, [showOnce]);
+    document.addEventListener('mouseleave', handleMouseLeave)
+
+    return () => {
+      document.removeEventListener('mouseleave', handleMouseLeave)
+    }
+  }, [])
 
   const handleClose = () => {
-    setIsVisible(false);
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'popup_close', {
-        popup_type: 'exit_intent',
-        service: 'agentic_dev'
-      });
-    }
-    onClose?.();
-  };
+    setIsVisible(false)
+  }
 
   const handleCTA = () => {
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'popup_cta_click', {
-        popup_type: 'exit_intent',
-        service: 'agentic_dev'
-      });
+    setIsVisible(false)
+    // Navigate or trigger action
+    if (ctaHref.startsWith('http')) {
+      window.location.href = ctaHref
+    } else {
+      window.location.pathname = ctaHref
     }
-  };
+  }
 
-  if (!isVisible) return null;
+  if (!isVisible) return null
 
   return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-lg shadow-xl max-w-md w-full p-6 relative animate-in fade-in scale-95 duration-300">
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
+      {/* Backdrop */}
+      <div
+        className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+        onClick={handleClose}
+      />
+
+      {/* Modal */}
+      <div className="relative bg-gray-900 border border-gray-800 rounded-xl shadow-2xl max-w-lg w-full p-8 animate-in fade-in slide-in-from-bottom">
         <button
           onClick={handleClose}
-          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
-          aria-label="Close"
+          className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
         >
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M6 18L18 6M6 6l12 12"
-            />
-          </svg>
+          <X className="w-6 h-6" />
         </button>
 
-        <h2 className="text-2xl font-bold text-gray-900 mb-3">{title}</h2>
-        
-        <p className="text-gray-600 mb-6 leading-relaxed">{message}</p>
+        <h3 className="text-2xl font-bold text-white mb-3">{title}</h3>
+        <p className="text-gray-400 mb-6">{message}</p>
 
-        <a
-          href={ctaLink}
+        {email && (
+          <div className="mb-6">
+            <label className="block text-sm text-gray-400 mb-2">Enter your email to stay updated</label>
+            <input
+              type="email"
+              placeholder="your@email.com"
+              className="w-full px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-600"
+            />
+          </div>
+        )}
+
+        <button
           onClick={handleCTA}
-          className="block w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 rounded-lg text-center transition-colors duration-200"
+          className="w-full px-6 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold transition-colors mb-3"
         >
-          {ctaText}
-        </a>
+          {cta}
+        </button>
 
         <button
           onClick={handleClose}
-          className="block w-full mt-3 text-gray-600 hover:text-gray-900 font-medium py-2 transition-colors"
+          className="w-full px-6 py-2 rounded-lg bg-gray-800 hover:bg-gray-700 text-gray-300 font-semibold transition-colors"
         >
-          Skip for now
+          Maybe Later
         </button>
       </div>
     </div>
-  );
-};
-
-export default ExitIntentPopup;
+  )
+}
