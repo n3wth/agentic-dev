@@ -623,6 +623,30 @@
             }
         }
     </style>
+    
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DEV123456"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DEV123456', {
+        'page_path': window.location.pathname,
+        'send_page_view': true
+      });
+      
+      document.addEventListener('submit', function(e) {
+        if (e.target.tagName === 'FORM') {
+          gtag('event', 'form_submission', {'form_name': e.target.getAttribute('name') || 'booking_form'});
+        }
+      });
+      
+      document.addEventListener('click', function(e) {
+        if (e.target.textContent.includes('Book') || e.target.textContent.includes('Get') || e.target.textContent.includes('Start')) {
+          gtag('event', 'cta_click', {'button_text': e.target.textContent});
+        }
+      });
+    </script>
 </head>
 <body>
     <section class="hero">
