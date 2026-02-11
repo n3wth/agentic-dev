@@ -786,6 +786,148 @@
         }
       });
     </script>
+
+    <!-- Enhanced Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://agentic-dev-rho.vercel.app"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://agentic-dev-rho.vercel.app#services"
+        }
+      ]
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What makes production AI agents different from research prototypes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Production agents need quality gates, error handling, cost optimization, and monitoring. Research prototypes often skip these. Our methodology ensures your agents work reliably at scale, with sub-$1 cost per execution."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does it actually cost to run AI agents?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on complexity, but our clients see costs around $0.01-1.00 per execution. We helped one client deploy agents that cost $0.59 for 11 production PR reviews. Most approaches cost 100x more."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can agents handle complex, real-world workflows?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely. Multi-agent orchestration lets you build systems where specialized agents coordinate on complex tasks. We've built agents that handle code review, deployment, monitoring, and rollback."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take to implement?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depends on scope. Simple agents: 2-4 weeks. Complex multi-agent systems: 8-12 weeks. We run agile sprints, so you see results and can iterate quickly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will my agents work with Claude, or do I need another model?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Claude's extended thinking and agentic capabilities make it perfect for production agents. We primarily work with Claude, but the patterns apply to any LLM. Claude's batching API also gives us 50% cost savings."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if quality is bad or costs explode?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Quality gates catch problems before production. We implement rejection thresholds, human-in-the-loop when needed, and cost budgets. Most of our clients see IMPROVED quality vs manual alternatives."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can agents replace my developers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, but they can make your team 360x more productive. Agents handle repetitive work, code reviews, testing, and deployment. Your developers focus on architecture and innovation."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Core Web Vitals Monitoring -->
+    <script>
+    // Web Vitals Tracking
+    if (typeof window !== 'undefined') {
+      // Cumulative Layout Shift (CLS)
+      let clsValue = 0;
+      if ('PerformanceObserver' in window) {
+        try {
+          const clsObserver = new PerformanceObserver((list) => {
+            for (const entry of list.getEntries()) {
+              if (!entry.hadRecentInput) {
+                const firstSessionEntry = clsValue;
+                clsValue += entry.value;
+                console.log('CLS Update:', clsValue.toFixed(3));
+              }
+            }
+          });
+          clsObserver.observe({type: 'layout-shift', buffered: true});
+        } catch (e) {
+          console.log('CLS monitoring not supported');
+        }
+      }
+
+      // Largest Contentful Paint (LCP)
+      if ('PerformanceObserver' in window) {
+        try {
+          const lcpObserver = new PerformanceObserver((list) => {
+            const entries = list.getEntries();
+            const lastEntry = entries[entries.length - 1];
+            console.log('LCP:', (lastEntry.renderTime || lastEntry.loadTime).toFixed(0), 'ms');
+          });
+          lcpObserver.observe({type: 'largest-contentful-paint', buffered: true});
+        } catch (e) {
+          console.log('LCP monitoring not supported');
+        }
+      }
+
+      // First Input Delay (FID) - now First Interaction Delay (INP)
+      if ('PerformanceObserver' in window) {
+        try {
+          const fidObserver = new PerformanceObserver((list) => {
+            for (const entry of list.getEntries()) {
+              console.log('FID:', entry.processingDuration.toFixed(0), 'ms');
+            }
+          });
+          fidObserver.observe({type: 'first-input', buffered: true});
+        } catch (e) {
+          console.log('FID monitoring not supported');
+        }
+      }
+    }
+    </script>
+
 </head>
 <body>
     <section class="hero">
