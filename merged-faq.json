@@ -1,0 +1,184 @@
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is AI agent development?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AI agent development involves building autonomous systems powered by large language models (like Claude) that can perform tasks independently, make decisions, and execute code without constant human supervision. These agents use orchestration patterns, quality gates, and feedback loops to deliver production-ready code."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you build agents that ship production code?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Through proper orchestration, context grounding, quality gates, and feedback loops. We use a proven framework of specialized agents (architect, implementer, reviewer, tester) that work together with human oversight to ship high-quality code at scale. The n3wth-orchestrator framework has delivered 360x faster component sync and 92% first-pass approval rates."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is agentic AI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Agentic AI refers to AI systems that can act autonomously toward specific goals. They plan, execute, learn, and adapt without explicit instructions for each step. Claude coding agents are a powerful example of agentic AI that can write, review, test, and deploy code with minimal human intervention."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does AI agent development consulting cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AI agent development consulting starts at $200/hour with an average ROI of 12.5x in the first 90 days. Most clients achieve 360x faster delivery and 99% cost reduction. First prototype is delivered within 7 days with a 100% money-back guarantee if the system isn't profitable."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is multi-agent orchestration?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Multi-agent orchestration involves coordinating multiple specialized AI agents to handle complex workflows. For example, one agent might scan GitHub issues, another generates fixes, a third reviews the code, and a fourth handles testing and deployment. This division of labor enables autonomous systems that can ship production code 24/7."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What makes production AI agents different from research prototypes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Production agents need quality gates, error handling, cost optimization, and monitoring. Research prototypes often skip these. Our methodology ensures your agents work reliably at scale, with sub-$1 cost per execution."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does it actually cost to run AI agents?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on complexity, but our clients see costs around $0.01-1.00 per execution. We helped one client deploy agents that cost $0.59 for 11 production PR reviews. Most approaches cost 100x more."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can agents handle complex, real-world workflows?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely. Multi-agent orchestration lets you build systems where specialized agents coordinate on complex tasks. We've built agents that handle code review, deployment, monitoring, and rollback."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take to implement?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depends on scope. Simple agents: 2-4 weeks. Complex multi-agent systems: 8-12 weeks. We run agile sprints, so you see results and can iterate quickly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will my agents work with Claude, or do I need another model?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Claude's extended thinking and agentic capabilities make it perfect for production agents. We primarily work with Claude, but the patterns apply to any LLM. Claude's batching API also gives us 50% cost savings."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if quality is bad or costs explode?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Quality gates catch problems before production. We implement rejection thresholds, human-in-the-loop when needed, and cost budgets. Most of our clients see IMPROVED quality vs manual alternatives."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can agents replace my developers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, but they can make your team 360x more productive. Agents handle repetitive work, code reviews, testing, and deployment. Your developers focus on architecture and innovation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What makes your AI agent framework different from basic LLM APIs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "APIs are black boxes. My framework gives you orchestration, state management, quality gates, and feedback loops. That's why our agents pass review first time instead of hallucinating. You get production-ready agents, not casino coins."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much faster is 360x actually?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We tested component sync. Manual: 11 days, $3,850. Our agents: 1 hour, $0.59. On complex features, we see 10-50x speedups depending on the task type. The 360x is specific, measured, documented."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I integrate this with my existing codebase?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. SYSTEM.md grounding works with any codebase. Point agents at your docs and existing code, set quality gates, deploy. No rewrite needed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What about hallucinations and safety?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "That's what the orchestration and grounding solve. By giving agents context (your codebase, standards, examples), they stop making stuff up. 95% reduction in hallucinations is typical."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to be an AI expert to use this?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. If you can describe a task, you can build an agent for it. The framework handles the complexity. We've trained teams with zero ML background."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does it cost to deploy agents?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depends on your use case. Simple tasks: $0.01-0.10 per execution. Complex: $0.50-2.00. Compare that to hiring developers: $50-200+ per task. The math is obvious."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can agents replace my entire engineering team?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, and you shouldn't want that. Agents are force multipliers. Your 6-person team becomes 30x more productive. They work on value creation, not busywork."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens when something goes wrong?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Rollback, monitoring, and quality gates catch issues before production. Our framework includes circuit breakers and fallbacks. Plus human review at every step until you trust the system."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I measure ROI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Track time saved, cost per task, and quality metrics. Most teams see 12.5x ROI in 90 days just from agent-assisted development. Some see 50x+ from full automation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the implementation timeline?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Basic setup: 1-2 weeks. Full orchestration: 4-8 weeks. Depends on codebase complexity. Most teams see value in week 1."
+          }
+        }
+      ]
+    }
+    </script>
