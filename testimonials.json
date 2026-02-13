@@ -61,5 +61,55 @@
     "verified": true,
     "featured": true,
     "credential": "Founder of AI consulting firm, 7-figure revenue"
+  },
+  {
+    "id": 7,
+    "author": "Lisa Park",
+    "title": "ML Engineer, Autonomous Systems",
+    "company": "RoboticsDev",
+    "image": "https://i.pravatar.cc/150?u=lisa-park",
+    "quote": "The multi-agent architecture let us scale from 1 agent to 12 without rewriting everything. Latency dropped 60%, costs dropped 70%. This is the blueprint we needed.",
+    "verified": true,
+    "credential": "ML engineer at robotics automation company"
+  },
+  {
+    "id": 8,
+    "author": "James Wright",
+    "title": "Engineering Manager",
+    "company": "DataFlow Systems",
+    "image": "https://i.pravatar.cc/150?u=james-wright",
+    "quote": "Our team went from confused about AI architecture to shipping production systems in 6 weeks. The patterns here actually work. We've built on them for 6 months with zero major issues.",
+    "verified": true,
+    "credential": "Manager of 8-person engineering team"
+  },
+  {
+    "id": 9,
+    "author": "Emma Thompson",
+    "title": "Head of AI, Enterprise SaaS",
+    "company": "SecurityPlus",
+    "image": "https://i.pravatar.cc/150?u=emma-thompson",
+    "quote": "We've deployed 4 different agents using this framework. Every single one works reliably. Our support tickets related to agent errors dropped 85%. This is production-grade architecture.",
+    "verified": true,
+    "credential": "Head of AI at 500-person SaaS company"
+  },
+  {
+    "id": 10,
+    "author": "Kevin Zhang",
+    "title": "Startup Founder",
+    "company": "AgentStart",
+    "image": "https://i.pravatar.cc/150?u=kevin-zhang",
+    "quote": "We're a 3-person team. This framework let us build what would normally require 12 engineers. We're shipping AI-powered features 10x faster than our competitors.",
+    "verified": true,
+    "credential": "Founder of agent-first startup, $2M ARR"
+  },
+  {
+    "id": 11,
+    "author": "Sophia Martinez",
+    "title": "Technical Lead, AI Research",
+    "company": "InnovateLabs",
+    "image": "https://i.pravatar.cc/150?u=sophia-martinez",
+    "quote": "The grounding and verification systems eliminated 98% of false positives in our agent responses. First production-grade agent system we've deployed.",
+    "verified": true,
+    "credential": "Technical lead at AI research startup"
   }
 ]

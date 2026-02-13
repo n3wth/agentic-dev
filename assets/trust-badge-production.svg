@@ -1,0 +1,20 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer circle -->
+  <circle cx="100" cy="100" r="95" fill="none" stroke="#0d47a1" stroke-width="2"/>
+  
+  <!-- Inner circle -->
+  <circle cx="100" cy="100" r="85" fill="#f0f7ff"/>
+  
+  <!-- Shield shape -->
+  <path d="M 100 30 L 60 50 L 60 95 Q 60 135 100 155 Q 140 135 140 95 L 140 50 Z" 
+        fill="none" stroke="#0d47a1" stroke-width="2.5"/>
+  
+  <!-- Checkmark -->
+  <path d="M 80 100 L 95 115 L 120 85" 
+        fill="none" stroke="#0d47a1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Text -->
+  <text x="100" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#0d47a1">
+    PRODUCTION TESTED
+  </text>
+</svg>
